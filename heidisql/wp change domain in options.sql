@@ -1,1 +1,1 @@
-UPDATE wp_users SET user_login = 'YourNewUsername' WHERE user_login = 'quantri';
+UPDATE wp_options SET option_value = replace(option_value, 'oldurl.com', 'newurl.com') WHERE option_name = 'home' OR option_name = 'siteurl';
