@@ -27,7 +27,7 @@
         "command": "workbench.action.focusActivityBar"
     },
     {
-        "key": "ctrl+alt+b",
+        "key": "alt+b",
         "command": "bookmarks.listFromAllFiles"
     },
     {
@@ -374,7 +374,7 @@
         "when": "!config.breadcrumbs.enabled"
     },
     {
-        "key": "alt+b",
+        "key": "ctrl+alt+b",
         "command": "bookmarksExplorer.focus"
     },
     {
@@ -428,7 +428,7 @@
         "when": "editorTextFocus"
     },
     {
-        "key": "alt+q",
+        "key": "alt+t",
         "command": "workbench.action.quickOpen",
         "args": "> Transform to",
         "when": "editorTextFocus"
@@ -437,6 +437,12 @@
         "key": "alt+e",
         "command": "workbench.action.quickOpen",
         "args": "> Emmet",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+'",
+        "command": "workbench.action.quickOpen",
+        "args": "> Fold Plus",
         "when": "editorTextFocus"
     },
     {
@@ -455,8 +461,13 @@
         "when": "editorTextFocus"
     },
     {
-        "key": "shift+enter",
-        "command": "extension.jumpy-word",
-        "when": "editorTextFocus"
+        "key": "ctrl+'",
+        "command": "extension.switchQuotes",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+k shift+;",
+        "command": "-extension.switchQuotes",
+        "when": "editorFocus"
     }
 ]
