@@ -1,0 +1,46 @@
+{
+	"la-foreign": {
+		"scope": "php",
+		"prefix": "la-foreign",
+		"body": [
+			"\\$table->foreign('$1')->references('id')->on('$2');"
+		],
+		"description": "migration foreign relationship"
+	},
+
+	"b:attribute-merge": {
+		"scope": "php, blade",
+		"prefix": "b:attribute-merge",
+		"body": [
+			"{{ \\$attributes->merge(['class' => '$1']) }}"
+		],
+		"description": "blade attribute merge"
+	},
+
+	"Make service provider": {
+		"prefix": "la:p",
+		"scope": "php",
+		"body": [
+			"<?php",
+			"",
+			"namespace ${RELATIVE_FILEPATH/^([^\\\\\\/]+)[\\\\\\/]|([^\\\\\\/]+)[\\\\\\/]|(?:[^\\\\\\/]+\\.[^\\\\\\/]+)/${1:/capitalize}${2:+\\\\}$2/g};",
+			"",
+			"use Illuminate\\Support\\ServiceProvider;",
+			"",
+			"class $TM_FILENAME_BASE extends ServiceProvider",
+			"{",
+			"    public function register(): void",
+			"    {",
+			"        //",
+			"    }",
+			"",
+			"    public function boot(): void",
+			"    {",
+			"        //",
+			"    }",
+			"}",
+			""
+		],
+		"description": "Make service provider"
+	}
+}

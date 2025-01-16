@@ -1,0 +1,14 @@
+{
+	"html": {
+		"snippets": {
+			"label": "<label>${1}</label>",
+			"form": "form",
+			"form:get": "form[method=get]",
+			"form:post": "form[method=post]"
+		}
+	},
+	"css": {
+		"snippets": {
+		}
+	}
+}

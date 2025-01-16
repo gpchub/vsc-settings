@@ -1,0 +1,296 @@
+{
+	"console.log": {
+		"prefix": "cslog->",
+		"body": [
+			"console.log('${1|🚀,✅,▶,✔,👉,👍,👌,😺,🦊,❤|} %c%o', `color:${2|green, red, blue, purple, black, indigo, maroon, gray|};`, $3)"
+		],
+	},
+
+	"console.log with name": {
+		"prefix": "cslogn->",
+		"body": [
+			"console.log('${1|🚀,✅,▶,✔,👉,👍,👌,😺,🦊,❤|} %c${2:object}: %o', `color:${3|green, red, blue, purple, black, indigo, maroon, gray|};`, $4)"
+		],
+	},
+
+	"region (js)": {
+		"prefix": "region",
+		"body": [
+			"//#region",
+			"$TM_SELECTED_TEXT",
+			"//#endregion",
+		]
+	},
+
+	"array filter": {
+		"prefix": "jsarr-filter",
+		"body": [
+			"filter((${1:item}) => $2)",
+		],
+	},
+
+	"array find": {
+		"prefix": "jsarr-find",
+		"body": [
+			"find((${1:item}) => $2)",
+		],
+	},
+
+	"array findIndex": {
+		"prefix": "jsarr-findIndex",
+		"body": [
+			"findIndex((${1:item}) => $2)",
+		],
+	},
+
+	"array findLast": {
+		"prefix": "jsarr-findLast",
+		"body": [
+			"findLast((${1:item}) => $2)",
+		],
+	},
+
+	"array findLastIndex": {
+		"prefix": "jsarr-findLastIndex",
+		"body": [
+			"findLastIndex((${1:item}) => $2)",
+		],
+	},
+
+	"array forEach arrow": {
+		"prefix": "jsarr-forEach-arr",
+		"body": [
+			"forEach((${1:item}) => $2)",
+		],
+	},
+
+	"array forEach": {
+		"prefix": "jsarr-forEach",
+		"body": [
+			"forEach(function(${1:item}) {\n\t$2\n})",
+		],
+	},
+
+	"array map": {
+		"prefix": "jsarr-map",
+		"body": [
+			"map((${1:item}) => $2)",
+		],
+	},
+
+	"array reduce": {
+		"prefix": "jsarr-reduce",
+		"body": [
+			"reduce(",
+			"\t(${1:accumulator}, ${2:currentValue}) => ${1:accumulator} + ${2:currentValue},",
+			"\t${3:initialValue},",
+			");"
+		],
+	},
+
+	"array reduceRight": {
+		"prefix": "jsarr-reduceRight",
+		"body": [
+			"reduceRight(",
+			"\t(${1:accumulator}, ${2:currentValue}) => ${1:accumulator} + ${2:currentValue},",
+			"\t${3:initialValue},",
+			");"
+		],
+	},
+
+	"array some": {
+		"prefix": "jsarr-some",
+		"body": [
+			"some((${1:item}) => $2)",
+		],
+	},
+
+	"has Own Property": {
+		"prefix": "hasownproperty-obj",
+		"body": [
+			"Object.prototype.hasOwnProperty.call(${1:object}, ${2:key})"
+		],
+	},
+
+	"JSON parse": {
+		"prefix": "jsonp->",
+		"body": [
+			"JSON.parse(${1:obj});"
+		],
+	},
+
+	"JSON stringify": {
+		"prefix": "jsons->",
+		"body": [
+			"JSON.stringify(${1:obj});"
+		],
+	},
+
+	"JSON stringify tab": {
+		"prefix": "jsonst->",
+		"body": [
+			"JSON.stringify(${1:obj}, null, 4);"
+		],
+	},
+
+	"add event listener": {
+		"prefix": "aevtl->",
+		"body": [
+			"document.addEventListener('${1:click}', function(event) {",
+			"\t$2",
+			"});"
+		],
+	},
+
+	"add event listener arrow": {
+		"prefix": "aevtlarr->",
+		"body": [
+			"document.addEventListener('${1:click}', event => {",
+			"\t$2",
+			"});"
+		],
+	},
+
+	"window load": {
+		"prefix": "load->",
+		"body": [
+			"window.addEventListener('load', () => {",
+			"\t$1",
+			"});"
+		],
+		"description": "window load"
+	},
+
+	"DOM Content Loaded": {
+		"prefix": "ready->",
+		"body": [
+			"window.addEventListener('DOMContentLoaded', () => {",
+			"\t$1",
+			"});"
+		],
+		"description": "DOM Content Loaded"
+	},
+
+	"loop through object with value": {
+		"prefix": "forofobj->",
+		"body": [
+			"for (const [${1:key}, ${2:value}] of Object.entries(${3:obj})) {",
+			"\t$4",
+			"}"
+		],
+		"description": "loop through object with value"
+	},
+
+	"Fetch Request": {
+		"prefix": "fetchreq",
+		"body": [
+			"fetch('${1:url}')",
+			"\t.then(res => res.json())",
+			"\t.then(data => {",
+			"\t\t${2:console.log(data);}",
+			"\t});"
+		],
+		"description": "Fetch Request"
+	},
+
+	"Async Fetch Request": {
+		"prefix": "fetchreq-async",
+		"body": [
+			"const response = await fetch('${1:url}');",
+			"const data = await response.json();",
+			"${2:console.log(data);}",
+		],
+		"description": "Fetch Async/Await"
+	},
+
+	"js class": {
+		"prefix": "jsclass->",
+		"body": [
+			"class ${1:ClassName}",
+			"{",
+			"\tconstructor() {",
+			"\t\tthis.init();",
+			"\t}",
+			"",
+			"\tinit() {",
+			"\t\t$2",
+			"\t}",
+			"}",
+		],
+		"description": "js class"
+	},
+
+	/*=============================================
+	=            jQuery            =
+	=============================================*/
+	"jQuery rebind": {
+		"prefix": "jqbind->",
+		"body": [
+			"(function($) {",
+			"\t$1",
+			"})(jQuery)"
+		],
+		"description": "jQuery rebind"
+	},
+
+	"jQuery ready": {
+		"prefix": "jqready->",
+		"body": [
+			"$(document).ready(function() {",
+			"\t$1",
+			"});"
+		],
+		"description": "jQuery ready"
+	},
+
+	"jQuery on": {
+		"prefix": "jqon->",
+		"body": [
+			"on(\"${1:click}\", function() {",
+			"\t$2",
+			"});"
+		],
+	},
+
+	"jQuery on child": {
+		"prefix": "jqonchild->",
+		"body": [
+			"on('${1:click}', '$2', function() {",
+			"\t$3",
+			"});"
+		],
+	},
+
+	"jQuery each": {
+		"prefix": "jqeach->",
+		"body": [
+			"each(function(${1:idx}, ${2:elem}) {",
+			"\t$3",
+			"});"
+		],
+	},
+
+	"jq get background url": {
+		"prefix": "jqGetBg->",
+		"body": [
+			"$${1:elem}.css('background-image').slice(4, -1).replace(/\"/g, \"\")"
+		],
+		"description": "jq get background url"
+	},
+
+	/*=============================================
+	=            Alpine           =
+	=============================================*/
+
+	"alpine:init": {
+		"prefix": "alpine:init",
+		"body": [
+			"document.addEventListener('alpine:init', () => {",
+			"\tAlpine.data('app', () => ({",
+			"\t\t$1",
+			"\t\\})); \/\/ Alpine.data",
+			"\\}); \/\/ alpine:init"
+		],
+		"description": "Alpine init"
+	},
+}

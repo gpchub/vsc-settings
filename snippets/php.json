@@ -1,0 +1,143 @@
+{
+	"function !exists colon": {
+		"prefix": "fnExists-colon->",
+		"body": [
+			"if (!function_exists('$1')):",
+			"\tfunction $1($2) {",
+			"\t\t$3",
+			"\t}",
+			"endif;"
+		],
+		"description": "Check if function exists"
+	},
+
+	"function !exists": {
+		"prefix": "fnExists->",
+		"body": [
+			"if (!function_exists('$1')) {",
+			"\tfunction $1($2) {",
+			"\t\t$3",
+			"\t}",
+			"}"
+		],
+		"description": "Check if function exists"
+	},
+
+	"region (php)": {
+		"prefix": "region",
+		"body": [
+			"#region ========== $1 ==========",
+			"",
+			"$2",
+			"",
+			"#endregion"
+		],
+		"description": "Create region"
+	},
+
+	"pretty print_r": {
+		"prefix": "d-printr",
+		"body": [
+		  "// BEGIN: Debugging",
+		  "echo \"<pre>\";",
+		  "print_r($1);",
+		  "echo \"</pre>\";",
+		  "// END: Debugging"
+		],
+		"description": "pretty print_r"
+	},
+
+	"pretty var_dump": {
+		"prefix": "d-vardump",
+		"body": [
+		  "// BEGIN: Debugging",
+		  "echo \"<pre>\";",
+		  "var_dump($1);",
+		  "echo \"</pre>\";",
+		  "// END: Debugging"
+		],
+		"description": "pretty var_dump"
+	},
+
+	"pretty var_export": {
+		"prefix": "d-varexport",
+		"body": [
+		  "// BEGIN: Debugging",
+		  "echo \"<pre>\";",
+		  "var_export($1);",
+		  "echo \"</pre>\";",
+		  "// END: Debugging"
+		],
+		"description": "pretty var_export"
+	},
+
+	"pretty debug by json_encode": {
+		"prefix": "d-jsonencode",
+		"body": [
+		  "// BEGIN: Debugging",
+		  "echo \"<pre>\";",
+		  "echo json_encode($1, JSON_PRETTY_PRINT);",
+		  "echo \"</pre>\";",
+		  "// END: Debugging"
+		],
+		"description": "pretty debug by json_encode"
+	},
+
+	"Try ... catch": {
+        "prefix": "tryc->",
+        "body": [
+            "try {",
+            "\t${4:# code...}",
+            "} catch (${2:\\Throwable} \\$ex) {",
+            "\t",
+            "}"
+        ],
+        "description": "Try catch block"
+    },
+
+    "Try ... catch ... finally": {
+        "prefix": "trycf->",
+        "body": [
+            "try {",
+            "\t${3:# code...}",
+            "} catch (${1:\\Throwable} \\$ex) {",
+            "\t",
+            "} finally {",
+            "\t",
+            "}"
+        ],
+        "description": "Try catch finally block"
+    },
+
+    "Catch": {
+        "prefix": "catch->",
+        "body": [
+            "catch (${1:\\Throwable} \\$${2:ex}) {",
+            "\t${3:# code...}",
+            "}"
+        ],
+        "description": "Catch block"
+    },
+
+    "Finally": {
+        "prefix": "fy->",
+        "body": [
+            "finally {",
+            "\t${0:# code...}",
+            "}"
+        ],
+        "description": "Finally block"
+    },
+
+	"php echo": {
+		"prefix": "echo->",
+		"body":"<?php echo \\$${1:variable}; ?>"
+	},
+
+	"classname psr": {
+		"prefix": "cln->",
+		"body": [
+			"${TM_FILENAME_BASE}",
+		]
+	},
+}

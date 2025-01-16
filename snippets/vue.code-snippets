@@ -1,0 +1,473 @@
+{
+	/*=============================================
+	= "scope" là "html" hoặc "javascript" tuỳ vào code sử dụng ở <script> hay <template>
+	=============================================*/
+
+	"vcomponent": {
+		"prefix": "vue-component",
+		"body": "<script setup>\nimport { ref, computed } from 'vue';\n\n</script>\n\n<template>\n\n</template>",
+	},
+
+	"vue pre": {
+		"prefix": "vpre",
+		"scope": "vue, html",
+		"body": "<pre>{{ $1 }}</pre>",
+	},
+
+	"vue defineProps": {
+		"prefix": "vprops",
+		"scope": "vue, javascript",
+		"body": [
+			"const props = defineProps([",
+			"\t$1",
+			"]);"
+		]
+	},
+
+	"vue computed": {
+		"prefix": "vcomputed",
+		"scope": "vue, javascript",
+		"body": [
+			"const $1 = computed(() => {",
+			"\t$2",
+			"});"
+		]
+	},
+
+	"vue computed short": {
+		"prefix": "vcomputed-short",
+		"scope": "vue, javascript",
+		"body": [
+			"const $1 = computed(() => $2);"
+		]
+	},
+
+	"vue GCard": {
+		"prefix": "vgcard",
+		"scope": "vue, html",
+		"body": [
+			"<GCard>",
+			"\t<template #title>{{ $1 }}</template>",
+			"\t$2",
+			"</GCard>"
+		],
+		"description": "vue GCard"
+	},
+
+	"vue GField Text": {
+		"prefix": "vgf-text",
+		"scope": "vue, html",
+		"body": [
+			"<GField :label=\"__('$1')\" for=\"$2\" :error=\"form.errors.$2\">",
+			"\t<GTextInput id=\"$2\" v-model=\"form.$2\" />",
+			"</GField>"
+		],
+		"description": "vue GField Text"
+	},
+
+	"vue GField Select": {
+		"prefix": "vgf-select",
+		"scope": "vue, html",
+		"body": [
+			"<GField :label=\"__('$1')\" for=\"$2\" :error=\"form.errors.$2\">",
+			"\t<GSelect id=\"$2\" v-model=\"form.$2\"",
+			"\t\t:options=\"$3\"",
+			"\t\t:placeholder=\"__('$4')\"",
+			"\t/>",
+			"</GField>"
+		],
+		"description": "vue GField Select"
+	},
+
+	"vue GField Select2": {
+		"prefix": "vgf-select2",
+		"scope": "vue, html",
+		"body": [
+			"<GField :label=\"__('$1')\" for=\"$2\" :error=\"form.errors.$2\">",
+			"\t<GSelect2 id=\"$2\" v-model=\"form.$2\" multiple",
+			"\t\t:options=\"$3\"",
+			"\t\t:placeholder=\"__('$4')\"",
+			"\t/>",
+			"</GField>"
+		],
+		"description": "vue GField Select2"
+	},
+
+	"vue GField Select 2 Autocomplete": {
+		"prefix": "vgf-select2-auto",
+		"scope": "vue, html",
+		"body": [
+			"<GField :label=\"__('$1')\" for=\"$2\" :error=\"form.errors.$2\">",
+			"\t<GSelect2 id=\"$2\" v-model=\"form.$2\" multiple autocomplete",
+			"\t\t:search-url=\"$3\"",
+			"\t/>",
+			"</GField>"
+		],
+		"description": "vue GField Select 2 Autocomplete"
+	},
+
+	"vue GField Textarea": {
+		"prefix": "vgf-textarea",
+		"scope": "vue, html",
+		"body": [
+			"<GField :label=\"__('$1')\" for=\"$2\" :error=\"form.errors.$2\">",
+			"\t<GTextarea id=\"$2\" v-model=\"form.$2\" />",
+			"</GField>"
+		],
+		"description": "vue GField Textarea"
+	},
+
+	"vue GField TextEditor": {
+		"prefix": "vgf-texteditor",
+		"scope": "vue, html",
+		"body": [
+			"<GField :label=\"__('$1')\" for=\"$2\" :error=\"form.errors.$2\">",
+			"\t<GTextEditor id=\"$2\" v-model=\"form.$2\" />",
+			"</GField>"
+		],
+		"description": "vue GField TextEditor"
+	},
+
+	"vue GField Datepicker": {
+		"prefix": "vgf-datepicker",
+		"scope": "vue, html",
+		"body": [
+			"<GField :label=\"__('$1')\" for=\"$2\" :error=\"form.errors.$2\">",
+			"\t<GDatetimepicker id=\"$2\" v-model=\"form.$2\" />",
+			"</GField>"
+		],
+		"description": "vue GField Datepicker"
+	},
+
+	"vue GField Datetimepicker": {
+		"prefix": "vgf-datetimepicker",
+		"scope": "vue, html",
+		"body": [
+			"<GField :label=\"__('$1')\" for=\"$2\" :error=\"form.errors.$2\">",
+			"\t<GDatetimepicker id=\"$2\" v-model=\"form.$2\" timepicker />",
+			"</GField>"
+		],
+		"description": "vue GField Datetimepicker"
+	},
+
+	"vue GField Checkbox": {
+		"prefix": "vgf-checkbox",
+		"scope": "vue, html",
+		"body": [
+			"<GField :label=\"__('$1')\" :error=\"form.errors.$2\">",
+			"\t<GCheckbox id=\"$2\" v-model=\"form.$2\" :label=\"__('$3')\" />",
+			"</GField>"
+		],
+		"description": "vue GField Checkbox"
+	},
+
+	"vue GField Checkbox multiple": {
+		"prefix": "vgf-checkbox-multiple",
+		"scope": "vue, html",
+		"body": [
+			"<GField :label=\"__('$1')\" :error=\"form.errors.$2\">",
+			"\t<GCheckbox id=\"$2\" v-model=\"form.$2\" multiple :options=\"$3\" />",
+			"</GField>"
+		],
+		"description": "vue GField Checkbox multiple"
+	},
+
+	"vue GField Radio": {
+		"prefix": "vgf-radio",
+		"scope": "vue, html",
+		"body": [
+			"<GField :label=\"__('$1')\" :error=\"form.errors.$2\">",
+			"\t<GRadioBox id=\"$2\" v-model=\"form.$2\" :options=\"$3\" />",
+			"</GField>"
+		],
+		"description": "vue GField Radio"
+	},
+
+	"vue GField Switch": {
+		"prefix": "vgf-switch",
+		"scope": "vue, html",
+		"body": [
+			"<GField :label=\"__('$1')\" :error=\"form.errors.$2\">",
+			"\t<GSwitch id=\"$2\" v-model=\"form.$2\" :label=\"__('$3')\" />",
+			"</GField>"
+		],
+		"description": "vue GField Switch"
+	},
+
+	"vue GField Number": {
+		"prefix": "vgf-number",
+		"scope": "vue, html",
+		"body": [
+			"<GField :label=\"__('$1')\" for=\"$2\" :error=\"form.errors.$2\">",
+			"\t<GNumberInput id=\"$2\" v-model=\"form.$2\" />",
+			"</GField>"
+		],
+		"description": "vue GField Number"
+	},
+
+	"vue GField Color": {
+		"prefix": "vgf-color",
+		"scope": "vue, html",
+		"body": [
+			"<GField :label=\"__('$1')\" for=\"$2\" :error=\"form.errors.$2\">",
+			"\t<GColorPicker id=\"$2\" v-model=\"form.$2\" />",
+			"</GField>"
+		],
+		"description": "vue GField Color"
+	},
+
+	"vue GField FilePicker": {
+		"prefix": "vgf-filepicker",
+		"scope": "vue, html",
+		"body": [
+			"<GField :label=\"__('$1')\" for=\"$2\" :error=\"form.errors.$2\">",
+			"\t<GFilePicker id=\"$2\" v-model=\"form.$2\" />",
+			"</GField>"
+		],
+	},
+
+	"vue GField ImagePicker": {
+		"prefix": "vgf-imagepicker",
+		"scope": "vue, html",
+		"body": [
+			"<GField :label=\"__('$1')\" for=\"$2\" :error=\"form.errors.$2\">",
+			"\t<GImagePicker id=\"$2\" v-model=\"form.$2\" />",
+			"</GField>"
+		],
+	},
+
+	"vue GField FileInput": {
+		"prefix": "vgf-fileinput",
+		"scope": "vue, html",
+		"body": [
+			"<GField :label=\"__('$1')\" for=\"$2\" :error=\"form.errors.$2\">",
+			"\t<GFileInput id=\"$2\" v-model=\"form.$2\" />",
+			"</GField>"
+		],
+	},
+
+	"vue GField ImageUpload": {
+		"prefix": "vgf-imageupload",
+		"scope": "vue, html",
+		"body": [
+			"<GField :label=\"__('$1')\" for=\"$2\" :error=\"form.errors.$2\">",
+			"\t<GImageUpload id=\"$2\" v-model=\"form.$2\" />",
+			"</GField>"
+		],
+	},
+
+	"vue GDialog": {
+		"prefix": "vgdialog",
+		"scope": "vue, html",
+		"body": [
+			"<GDialog ref=\"$1\">",
+			"\t<template #title>${2:title}</template>",
+			"\t<template #content>",
+			"\t\t${3:content}",
+			"\t</template>",
+			"\t<template #footer>",
+			"\t\t<button class=\"button is-primary mr-2\" :disabled=\"${4:form}.processing\" form=\"${5:htmlFormId}\">{{ __('Lưu lại') }}</button>",
+			"\t\t<button type=\"button\" class=\"button\" @click=\"$1.close()\">{{ __('Huỷ') }}</button>",
+			"\t</template>",
+			"</GDialog>"
+		],
+	},
+
+	"vue GOffcanvas": {
+		"prefix": "vgoffcanvas",
+		"scope": "vue, html",
+		"body": [
+			"<GOffcanvas ref=\"$1\" extra-class=\"xl:w-1/3\">",
+			"\t<template #header>${2:title}</template>",
+			"\t<template #content>",
+			"\t\t${3:content}",
+			"\t</template>",
+			"</GOffcanvas>"
+		],
+	},
+
+	"vue v-tooltip": {
+		"prefix": "vvtooltip",
+		"scope": "vue, html",
+		"body": [
+			"v-tooltip :aria-label=\"__('$1')\"",
+		],
+	},
+
+	"vue gtabs": {
+		"prefix": "vgtabs",
+		"scope": "vue, html",
+		"body": [
+			"<GTabs>",
+			"\t<template #nav>",
+			"\t\t<GTabNav target=\"${1:tabId1}\">{{ __('${2:Tab 1}') }}</GTabNav>",
+			"\t\t<GTabNav target=\"${3:tabId2}\">{{ __('${4:Tab 2')} }}</GTabNav>",
+			"\t</template>",
+			"\t<template #content>",
+			"\t\t<GTabPane id=\"${1:tabId1}\" active>",
+			"\t\t\t$5",
+			"\t\t</GTabPane>",
+			"",
+			"\t\t<GTabPane id=\"${3:tabId2}\">",
+			"\t\t\t",
+			"\t\t</GTabPane>",
+			"\t</template>",
+			"</GTabs>"
+		],
+	},
+
+	"vue gtab-nav": {
+		"prefix": "vgtab-nav",
+		"scope": "vue, html",
+		"body": [
+			"<GTabNav target=\"${1:tabId1}\">{{ __('${2:Tab 1}') }}</GTabNav>",
+		],
+	},
+
+	"vue gtab-pane": {
+		"prefix": "vgtab-pane",
+		"scope": "vue, html",
+		"body": [
+			"<GTabPane id=\"${1:tabId1}\">",
+			"\t$2",
+			"</GTabPane>",
+		],
+	},
+
+	"vue button": {
+		"prefix": "vbutton",
+		"scope": "vue, html",
+		"body": [
+			"<button type=\"${1|button,submit|}\" class=\"button is-${2|primary,secondary,plain|}\">{{ __('$3') }}</button>"
+		],
+	},
+
+	"vue button primary": {
+		"prefix": "vbutton-p",
+		"scope": "vue, html",
+		"body": [
+			"<button type=\"${1|button,submit|}\" class=\"button is-primary\">{{ __('$2') }}</button>"
+		],
+	},
+
+	"vue button secondary": {
+		"prefix": "vbutton-s",
+		"scope": "vue, html",
+		"body": [
+			"<button type=\"${1|button,submit|}\" class=\"button is-secondary\">{{ __('$2') }}</button>"
+		],
+	},
+
+	"vue page": {
+		"prefix": "vpage",
+		"scope": "vue",
+		"body": [
+			"<script setup>",
+			"import AppLayout from '@/Layouts/AppLayout.vue';",
+			"import { ref, computed } from 'vue';",
+			"import { useForm } from '@inertiajs/vue3';",
+			"",
+			"const props = defineProps([",
+			"\tpageTitle",
+			"\tbreadcrumb",
+			"\t$1",
+			"]);",
+			"",
+			"</script>",
+			"",
+			"<template>",
+			"\t<AppLayout :title=\"pageTitle\" :breadcrumb=\"breadcrumb\">",
+			"\t\t",
+			"\t</AppLayout>",
+			"</template>"
+		],
+	},
+
+	"vue page admin": {
+		"prefix": "vpage-admin",
+		"scope": "vue",
+		"body": [
+			"<script setup>",
+			"import AdminLayout from '@/Layouts/AppLayout.vue';",
+			"import { ref, computed } from 'vue';",
+			"import { useForm } from '@inertiajs/vue3';",
+			"",
+			"const props = defineProps([",
+			"\tpageTitle",
+			"\tbreadcrumb",
+			"\t$1",
+			"]);",
+			"",
+			"</script>",
+			"",
+			"<template>",
+			"\t<AppLayout :title=\"pageTitle\" :breadcrumb=\"breadcrumb\">",
+			"\t\t",
+			"\t</AppLayout>",
+			"</template>"
+		],
+	},
+
+	"vue confirm": {
+		"prefix": "vconfirm",
+		"scope": "vue, javascript",
+		"body": [
+			"async function ${1:functionName}() {",
+			"",
+			"\tconst dialog = new ConfirmDialog({",
+			"\t\tquestionText: __('$2'),",
+			"\t\tquestionTitle: __('$3')",
+			"\t});",
+			"",
+			"\tconst confirmOk = await dialog.confirm();",
+			"",
+			"\tif (confirmOk) {",
+			"\t\t$4",
+			"\t}",
+			"}"
+		],
+	},
+
+	"vue axios post": {
+		"prefix": "vaxios-post",
+		"scope": "vue, javascript",
+		"body": [
+			"axios({",
+			"\tmethod: '${1|post,put,patch,delete|}',",
+			"\turl: ${2:url},",
+			"\tdata: ${3:data}",
+			"}).then((res) => {",
+			"\t$4",
+			"\tToastSuccess(res.data.message);",
+			"})",
+			".catch(function (error) {",
+			"\tToastError(error.response.data.message);",
+			"});"
+		],
+	},
+
+	"vue axios get": {
+		"prefix": "vaxios-get",
+		"scope": "vue, javascript",
+		"body": [
+			"axios({",
+			"\tmethod: 'get',",
+			"\turl: ${2:url},",
+			"\tparams: ${3:params}",
+			"}).then((res) => {",
+			"\t$4",
+			"});",
+		],
+	},
+
+	"vue watch": {
+		"prefix": "vwatch",
+		"scope": "vue, javascript",
+		"body": [
+			"watch(() => $1, () => {",
+			"\t$2",
+			"});"
+		],
+	}
+
+}

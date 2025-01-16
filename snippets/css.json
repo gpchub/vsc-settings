@@ -1,0 +1,89 @@
+{
+	"Media query: min-width md": {
+		"prefix": "minmd",
+		"body": ["@media (min-width: 768px) {\n\t$1\n}"]
+	},
+
+	"Media query: min-width lg": {
+		"prefix": "minlg",
+		"body": ["@media (min-width: 1024px) {\n\t$1\n}"]
+	},
+
+	"Media query: min-width xl": {
+		"prefix": "minxl",
+		"body": ["@media (min-width: 1280px) {\n\t$1\n}"]
+	},
+
+	"Media query: min-width 2xl": {
+		"prefix": "min2xl",
+		"body": ["@media (min-width: 1536px) {\n\t$1\n}"]
+	},
+
+	"Media query: max-width md": {
+		"prefix": "maxmd",
+		"body": ["@media (max-width: 767px) {\n\t$1\n}"]
+	},
+
+	"media desktop": {
+		"prefix": "mqdesktop",
+		"body": [
+			"@media (min-width: 1280px) {",
+			"\t$1",
+			"}"
+		]
+	},
+
+	"media mobile": {
+		"prefix": "mqmobile",
+		"body": [
+			"@media (max-width: 767px) {",
+			"\t$1",
+			"}"
+		]
+	},
+
+	"media not mobile": {
+		"prefix": "mqn-mobile",
+		"body": [
+			"@media (min-width: 768px) {",
+			"\t$1",
+			"}"
+		]
+	},
+
+	"region-start-css": {
+		"prefix": "region-css",
+		"body": "/*#region $1*/\n"
+	},
+
+	"endregion-css": {
+		"prefix": "endregion-css",
+		"body": "/*#endregion*/\n"
+	},
+
+	"region (css)": {
+		"prefix": "region",
+		"body": [
+			"/*#region */",
+			"$TM_SELECTED_TEXT",
+			"/*#endregion */",
+		]
+	},
+
+	"grid auto": {
+		"prefix": "gridauto->",
+		"body": [
+			"grid-template-columns: repeat(auto-fill, minmax(${0:300px}, 1fr));"
+		],
+		"description": "grid auto"
+	},
+
+	"grid center": {
+		"prefix": "center->",
+		"body": [
+			"display: grid;",
+			"place-items: center;"
+		],
+		"description": "grid center"
+	},
+}
