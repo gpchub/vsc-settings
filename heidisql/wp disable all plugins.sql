@@ -1,0 +1,1 @@
+UPDATE wp_options SET option_value = 'a:0:{}' WHERE option_name = 'active_plugins';

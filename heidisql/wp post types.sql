@@ -1,0 +1,1 @@
+SELECT DISTINCT post_type FROM wp_posts;
